@@ -7,20 +7,40 @@ class Gitbak < Formula
   homepage "https://github.com/bashhack/gitbak"
   version "1.0.0"
   license "MIT"
-  depends_on :linux
 
-  if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-    url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Linux_x86_64.zip"
-    sha256 "5a2efa4d80895a4d0dfdfbc9bddf6ca077243727093cee3c69191e100dbc338e"
-    def install
-      bin.install "gitbak"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Darwin_x86_64.zip"
+      sha256 "bffdd519293f2cef8c98736c348faf5f81843006aa7856dd2d0fe9e3f42b40e0"
+
+      def install
+        bin.install "gitbak"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Darwin_arm64.zip"
+      sha256 "ac9504ab6e667f5b682fa0b22e74bfd4919f09c12471273d5cbf43d0fd1e5a9a"
+
+      def install
+        bin.install "gitbak"
+      end
     end
   end
-  if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-    url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Linux_arm64.zip"
-    sha256 "46aad79507cf83dd73cb6e47de45d29c3f50f5e48d072549a2ae57e6c31fe438"
-    def install
-      bin.install "gitbak"
+
+  on_linux do
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Linux_x86_64.tar.gz"
+      sha256 "0d8382c241bbf7263d7273a5b5dab7b515a576d067a30a5b336899d5ba4c797a"
+      def install
+        bin.install "gitbak"
+      end
+    end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Linux_arm64.tar.gz"
+      sha256 "64d9e66c4963ecc7db39bdd47f124c496f2db93e68ac334964a8e8f9cdcc5729"
+      def install
+        bin.install "gitbak"
+      end
     end
   end
 
