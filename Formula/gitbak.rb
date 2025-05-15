@@ -5,21 +5,21 @@
 class Gitbak < Formula
   desc "Automatic commit safety net"
   homepage "https://github.com/bashhack/gitbak"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Darwin_x86_64.zip"
-      sha256 "bffdd519293f2cef8c98736c348faf5f81843006aa7856dd2d0fe9e3f42b40e0"
+      url "https://github.com/bashhack/gitbak/releases/download/v1.0.1/gitbak_Darwin_x86_64.zip"
+      sha256 "2f33344caa73b3768c18a6322abe251c10178c01e5e8125deebd6323d5a1d12c"
 
       def install
         bin.install "gitbak"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Darwin_arm64.zip"
-      sha256 "ac9504ab6e667f5b682fa0b22e74bfd4919f09c12471273d5cbf43d0fd1e5a9a"
+      url "https://github.com/bashhack/gitbak/releases/download/v1.0.1/gitbak_Darwin_arm64.zip"
+      sha256 "d61f6bbf56ba15aae4487d199211bdde2b4fb207ef51945a33149ce78fa1e2af"
 
       def install
         bin.install "gitbak"
@@ -29,15 +29,15 @@ class Gitbak < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Linux_x86_64.tar.gz"
-      sha256 "0d8382c241bbf7263d7273a5b5dab7b515a576d067a30a5b336899d5ba4c797a"
+      url "https://github.com/bashhack/gitbak/releases/download/v1.0.1/gitbak_Linux_x86_64.tar.gz"
+      sha256 "ac5262c250ca7a019baedf74b5790c8735c2fa57d3a599575b19c5bf0d59b05e"
       def install
         bin.install "gitbak"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/bashhack/gitbak/releases/download/v1.0.0/gitbak_Linux_arm64.tar.gz"
-      sha256 "64d9e66c4963ecc7db39bdd47f124c496f2db93e68ac334964a8e8f9cdcc5729"
+      url "https://github.com/bashhack/gitbak/releases/download/v1.0.1/gitbak_Linux_arm64.tar.gz"
+      sha256 "0d1eb9f8a390b2e9930b63e04b08f7dd3dddc6351b2fc090364ac5ea336be9c5"
       def install
         bin.install "gitbak"
       end
